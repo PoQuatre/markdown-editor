@@ -19,7 +19,8 @@
     "lint:eslint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "lint:stylelint": "stylelint --aei \"src/**/*.css\"",
     "commit": "git-cz",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "postinstall": "patch-package"
   },
   "lint-staged": {
     "*.css": "stylelint --cache --fix",
