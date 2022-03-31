@@ -1,0 +1,14 @@
+diff --git a/node_modules/parcel/lib/cli.js b/node_modules/parcel/lib/cli.js
+index b42864b..4354f0a 100755
+--- a/node_modules/parcel/lib/cli.js
++++ b/node_modules/parcel/lib/cli.js
+@@ -519,7 +519,8 @@ async function normalizeOptions(command, inputFS) {
+       assetsPerBundle: parseInt(command.detailedReport, 10)
+     } : null,
+     env: {
+-      NODE_ENV: nodeEnv
++      NODE_ENV: nodeEnv,
++      PUBLIC_URL: command.publicUrl
+     },
+     additionalReporters,
+     defaultTargetOptions: {
