@@ -23,7 +23,7 @@
     "postinstall": "patch-package"
   },
   "lint-staged": {
-    "*.css": "stylelint --cache --fix",
+    "*.{css,scss}": "stylelint --cache --fix",
     "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
     "*.{js,jsx,ts,tsx,json,html,md,svg,yml}": "prettier --write"
   },
@@ -44,6 +44,9 @@
     }
   },
   "dependencies": {
+    "@codemirror/state": "^0.19.9",
+    "@codemirror/view": "^0.19.48",
+    "modern-normalize": "^1.1.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
@@ -75,8 +78,6 @@
     "parcel-namer-rewrite": "^2.0.0-rc.2",
     "parcel-resolver-ts-base-url": "^1.1.5",
     "patch-package": "^6.4.7",
-    "postcss": "^8.4.12",
-    "postcss-preset-env": "^7.4.3",
     "postinstall-postinstall": "^2.1.0",
     "prettier": "^2.6.1",
     "stylelint": "^14.6.1",

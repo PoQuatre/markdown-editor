@@ -1,3 +1,11 @@
+import { Editor } from 'components';
+
+import styles from './App.module.css';
+
 export const App = () => {
-  return <h1>Hello World !</h1>;
+  return (
+    <div className={styles.container}>
+      <Editor initialValue={'# Hello World!\n'} />
+    </div>
+  );
 };
