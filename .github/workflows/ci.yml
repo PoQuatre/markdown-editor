@@ -105,12 +105,15 @@ jobs:
       - name: Build 🛠️
         run: yarn build:ci
 
+      - name: Compress Artifact 📁
+        run: tar -czvf dist.tar.gz dist/
+
       - name: Upload Artifact ⬆️
         if: github.ref == 'refs/heads/main'
         uses: actions/upload-artifact@v3
         with:
           name: dist
-          path: dist/
+          path: dist.tar.gz
 
   deploy:
     name: Deploy 🚀
@@ -125,7 +128,10 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: dist
-          path: dist/
+          path: dist.tar.gz
+
+      - name: Decompress Artifact 📂
+        run: tar -xzvf dist.tar.gz
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.5
