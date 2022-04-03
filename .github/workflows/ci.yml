@@ -128,7 +128,6 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: dist
-          path: dist.tar.gz
 
       - name: Decompress Artifact 📂
         run: tar -xzvf dist.tar.gz
