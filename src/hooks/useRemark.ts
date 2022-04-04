@@ -5,6 +5,8 @@ import remarkParse from 'remark-parse';
 import remarkReact from 'remark-react';
 import { unified } from 'unified';
 
+import { CodeHighlighter } from 'components';
+
 const sanitize = {
   ...defaultSchema,
   attributes: {
@@ -20,6 +22,9 @@ export const useRemark = (markdown: string) => {
     .use(remarkReact, {
       createElement,
       sanitize,
+      remarkReactComponents: {
+        code: CodeHighlighter,
+      },
     })
     .processSync(markdown).result;
 };
