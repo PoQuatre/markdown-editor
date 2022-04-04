@@ -103,7 +103,9 @@ jobs:
         run: yarn install
 
       - name: Build 🛠️
-        run: yarn build:ci
+        run: |
+          yarn build:ci
+          touch dist/.nojekyll
 
       - name: Compress Artifact 📁
         run: tar -czvf dist.tar.gz dist/
